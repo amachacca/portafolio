@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- =====================================================
+        TÍTULO DE LA PÁGINA — Cambia según tu nombre
+        ===================================================== -->
+    <title>Amilcar Machacca Mayo | Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- =====================================================
+        FUENTES — Puedes cambiar por otras de Google Fonts
+        ===================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVBAR SUPERIOR FIJO
+     ══════════════════════════════════════════════════════════ -->
+
+<!-- ─────────────────────────────────────────────────────────
+     MENÚ SUPERIOR — Edita los ítems del menú aquí
+     ───────────────────────────────────────────────────────── -->
+<header class="navbar" role="banner">
+
+    <!-- Logo / Nombre en el navbar — Cambia el texto -->
+    <a class="navbar-brand" href="#inicio">
+        <span class="nav-dot"></span>
+        Amilcar<span>Machacca Mayo</span>
+    </a>
+
+    <!-- Links de navegación (escritorio) -->
+    <nav class="nav-links" role="navigation" aria-label="Navegación principal">
+        <!-- Agrega, quita o renombra los <a> según tus secciones -->
+        <a class="nav-link" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#proyectos">Proyectos</a>
+        <a class="nav-link" href="#blog">Blog</a>
+        <a class="nav-link" href="#recursos">Recursos</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- Acciones derecha del navbar -->
+    <div class="nav-actions">
+
+        <!-- Botón toggle sidebar (CV panel) -->
+        <button class="sidebar-nav-btn" id="sidebarToggle" title="Mostrar/ocultar perfil" aria-label="Toggle sidebar">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="7" height="18" rx="1"/><rect x="13" y="3" width="8" height="4" rx="1"/><rect x="13" y="10" width="8" height="4" rx="1"/><rect x="13" y="17" width="8" height="4" rx="1"/>
+        </svg>
+        </button>
+
+    <!-- ─────────────────────────────────────────────────────
+         BOTÓN TEMA CLARO/OSCURO — Ubicado en el navbar
+         ───────────────────────────────────────────────────── -->
+        <button class="theme-btn" id="themeToggle" aria-label="Cambiar tema">
+        <!-- El icono y texto se actualizan con JS -->
+        <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <span id="themeLabel">Claro</span>
+        </button>
+
+        <!-- Botón hamburger (solo móvil) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+    </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+  <!-- Los mismos ítems del menú, duplicados para móvil -->
+  <a class="nav-link" href="#inicio">Inicio</a>
+  <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+  <a class="nav-link" href="#servicios">Servicios</a>
+  <a class="nav-link" href="#proyectos">Proyectos</a>
+  <a class="nav-link" href="#blog">Blog</a>
+  <div class="mobile-nav-divider"></div>
+  <a class="nav-link" href="#recursos">Recursos</a>
+  <a class="nav-link" href="#contacto">Contacto</a>
+</nav>
+<!-- FIN Navbar Superior -->
+
+
+<!-- Layout contenedor -->
+<div class="layout">
+
+    <!-- Overlay para móviles -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ══════════════════════════════════════════════════════════
+        SIDEBAR — Hoja de vida lateral izquierda
+        ══════════════════════════════════════════════════════════ -->
+    <aside class="sidebar" id="sidebar" aria-label="Perfil personal">
+
+    <!-- ─────────────────────────────────────────────────────
+         FOTO PERSONAL — Reemplaza src con la URL de tu foto
+         ───────────────────────────────────────────────────── -->
+        <img
+        class="sidebar-photo"
+        src="https://avatars.githubusercontent.com/u/166049998?v=4?seed=portfolio&backgroundColor=0b0d11"
+        alt="Foto de perfil"
+        />
+
+    <!-- ─────────────────────────────────────────────────────
+         NOMBRE y PROFESIÓN — Edita el texto
+         ───────────────────────────────────────────────────── -->
+        <div class="sidebar-identity animate">
+        <h1>Amilcar Machacca Mayo</h1>
+        <p>Ingeniero Estructural</p>
+        </div>
+
+    <hr class="divider"/>
+
+    <!-- ─────────────────────────────────────────────────────
+         CONTACTO — Edita email, teléfono, ubicación y sitio web
+         ───────────────────────────────────────────────────── -->
+    <div class="sidebar-section animate delay-1">
+    <h2>Contacto</h2>
+        <!-- Correo Electronico -->
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:200190@unsaac.edu.pe">200190@unsaac.edu.pe</a>
+        </div>
+        <!-- Teléfono -->
+        <div class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12 19.79 19.79 0 011.19 3.27 2 2 0 013.14 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+51 926 493 401</span>
+        </div>
+        <!-- Ubicacion -->
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Cusco, Perú</span>
+        </div>
+        <!-- Sitio web -->
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <a href="https://amachacca.github.io/amilcar/" target="_blank">sitio web</a>
+        </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <!-- ─────────────────────────────────────────────────────
+         EDUCACIÓN — Agrega o quita items de la lista
+         ───────────────────────────────────────────────────── -->
+        <div class="sidebar-section animate delay-1">
+        <h2>Educación</h2>
+        <ul>
+            <li>Ingenieria Civil - Universidad Nacional de San Antonio Abad del Cusco, 2024</li>
+            <li>Capacitacion en diseño estructural, Revir, FEM</li>
+        </ul>
+        </div>
+
+    <hr class="divider"/>
+
+    <!-- ─────────────────────────────────────────────────────
+         HABILIDADES — Cambia nombre y nivel (data-level = 0-100)
+         ───────────────────────────────────────────────────── -->
+    <div class="sidebar-section animate delay-2">
+    <h2>Habilidades</h2>
+        <div class="skill-item">
+        <div class="skill-label"><span>ETABS / SAP2000</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-item">
+        <div class="skill-label"><span>Revit</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-item">
+        <div class="skill-label"><span>Python</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+        <div class="skill-label"><span>AUTOCAD, CIVIL 3D</span><span>60%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+        </div>
+        <div class="skill-item">
+        <div class="skill-label"><span>S10 / DEPHIN EXPRESS</span><span>95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+        </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <!-- ─────────────────────────────────────────────────────
+         TECNOLOGÍAS — Agrega o quita tags
+         ───────────────────────────────────────────────────── -->
+    <div class="sidebar-section animate delay-3">
+        <h2>Tecnologías</h2>
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">VBA</span>
+            <span class="tag">Rust</span>
+            <span class="tag">Latex</span>
+            <span class="tag">Git</span>
+            <span class="tag">MathLab</span>
+        </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <!-- ─────────────────────────────────────────────────────
+         REDES SOCIALES — Cambia los href con tus perfiles reales
+         ───────────────────────────────────────────────────── -->
+    <div class="sidebar-section animate delay-3">
+      <h2>Encuéntrame en</h2>
+      <div class="social-links">
+
+        <!-- GitHub -->
+        <a class="social-link" href="https://github.com/amachacca" target="_blank" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-link" href="https://linkedin.com/in/amachacca" target="_blank" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://facebook.com/amachacca" target="_blank" title="Facebook" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 440 146.7 540.8 258.2 568.5L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 574.1C477.8 558.8 576 450.9 576 320z"/>
+            </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@amachacca" target="_blank" title="TikTok" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M544.5 273.9C500.5 274 457.5 260.3 421.7 234.7L421.7 413.4C421.7 446.5 411.6 478.8 392.7 506C373.8 533.2 347.1 554 316.1 565.6C285.1 577.2 251.3 579.1 219.2 570.9C187.1 562.7 158.3 545 136.5 520.1C114.7 495.2 101.2 464.1 97.5 431.2C93.8 398.3 100.4 365.1 116.1 336C131.8 306.9 156.1 283.3 185.7 268.3C215.3 253.3 248.6 247.8 281.4 252.3L281.4 342.2C266.4 337.5 250.3 337.6 235.4 342.6C220.5 347.6 207.5 357.2 198.4 369.9C189.3 382.6 184.4 398 184.5 413.8C184.6 429.6 189.7 444.8 199 457.5C208.3 470.2 221.4 479.6 236.4 484.4C251.4 489.2 267.5 489.2 282.4 484.3C297.3 479.4 310.4 469.9 319.6 457.2C328.8 444.5 333.8 429.1 333.8 413.4L333.8 64L421.8 64C421.7 71.4 422.4 78.9 423.7 86.2C426.8 102.5 433.1 118.1 442.4 131.9C451.7 145.7 463.7 157.5 477.6 166.5C497.5 179.6 520.8 186.6 544.6 186.6L544.6 274z"/>
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/926493401" target="_blank" title="WhatsApp" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/>
+            </svg>
+        </a>
+
+      </div>
+    </div>
+    <!-- FIN Redes Sociales -->
+
+    </aside>
+    <!-- FIN SIDEBAR -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       PANEL PRINCIPAL — Scrollable con todas las secciones
+       ══════════════════════════════════════════════════════════ -->
+  <main class="main-content" id="main">
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN INICIO
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN INICIO — Personaliza el héroe aquí
+         ───────────────────────────────────────────────────── -->
+    <section id="inicio" class="hero">
+      <p class="hero-label animate">Disponible para proyectos</p>
+      <!-- Título principal — cambia el texto -->
+      <h2 class="animate delay-1">
+        Ingeniero civil estructural<br/>
+        <em>Estructuras & Automatización</em>
+      </h2>
+      <!-- Descripción — cambia el texto -->
+      <p class="animate delay-2">Soy un ingeniero civil apasionado por las estructuras y la optimización de procesos. Combino mi conocimiento en diseño y cálculo estructural con habilidades en programación para crear soluciones eficientes, automatizar tareas repetitivas y desarrollar herramientas técnicas.</p>
+      <p class="animate delay-2">Entre mis proyectos destacados se incluye un motor de cálculo para armaduras y elementos finitos 2D, diseñado para mejorar la precisión y velocidad en el análisis estructural.</p>
+      <div class="hero-cta animate delay-3">
+        <!-- CTA primario — cambia el href -->
+        <a class="btn-primary" href="#proyectos">Ver proyectos</a>
+        <!-- CTA secundario — cambia el href -->
+        <a class="btn-outline" href="#contacto">Contactarme</a>
+      </div>
+
+      <!-- Stats rápidas — cambia los números y etiquetas -->
+      <div class="hero-stats animate delay-4">
+        <div class="stat-item">
+          <div class="stat-num">1+</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Proyectos colaborados</div>
+        </div>
+        <!-- <div class="stat-item">
+          <div class="stat-num">18</div>
+          <div class="stat-label">Clientes satisfechos</div>
+        </div> -->
+        <!-- <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Premios obtenidos</div>
+        </div> -->
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN SOBRE MÍ
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN SOBRE MÍ — Edita el texto y las tarjetas de valores
+         ───────────────────────────────────────────────────── -->
+    <section id="sobre-mi">
+      <div class="section-header">
+        <p class="section-label">Conóceme</p>
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="section-subtitle">Un poco de mi historia, mis valores y cómo trabajo.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <!-- Párrafos de presentación — edita libremente -->
+          <p>
+            Soy un apasionado <strong>Egresado de Ingeniería Civil</strong> con especial interés en ingeniería estructural y metodología BIM. Tengo experiencia en programación aplicada a proyectos de construcción, modelado en Revit y análisis estructural con Python.
+          </p>
+          <p>
+            Me destaco por aprender rápidamente nuevas herramientas, trabajar de manera organizada y colaborar efectivamente en proyectos multidisciplinarios. Mi objetivo es aplicar mis conocimientos en entornos constructivos innovadores y contribuir al desarrollo de soluciones estructurales eficientes.
+          </p>
+          <p>
+            Fuera del trabajo, soy un apasionado en proyectos en automatización, optimización y desarrollo de motores de cálculo estructural. En mi tiempo libre, leo sobre métodos de elementos finitos, análisis matricial y propiedades de materiales, aplicando lo aprendido para mejorar procesos y proyectos. Me interesa combinar el rigor del cálculo con la programación para crear soluciones que hagan más eficiente el diseño y análisis estructural.
+          </p>
+          <!-- Botón de descarga CV — cambia el href con la ruta real de tu CV -->
+          <div style="margin-top:20px;">
+            <a class="btn-outline" href="assets/cv.pdf" download>⬇ Descargar CV</a>
+          </div>
+        </div>
+
+        <!--   -->
+
+
+        <!-- Tarjetas de valores — agrega, quita o edita -->
+        <div class="about-values">
+          <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <div>
+              <h4>Orientado a resultados</h4>
+              <p>Priorizo el impacto real sobre la perfección técnica abstracta.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div>
+              <h4>Colaboración ante todo</h4>
+              <p>Trabajo de la mano con diseño, producto y stakeholders desde el día uno.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">📚</div>
+            <div>
+              <h4>Aprendizaje continuo</h4>
+              <p>La tecnología evoluciona rápido; me gusta evolucionar con ella.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⚡</div>
+            <div>
+              <h4>Rendimiento y calidad</h4>
+              <p>Código limpio, tests y performance no son opcionales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FIN Sección Sobre mí -->
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN SERVICIOS
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN SERVICIOS — Duplica .service-card para más servicios
+         ───────────────────────────────────────────────────── -->
+    <section id="servicios">
+        <div class="section-header">
+            <p class="section-label">¿Qué ofrezco?</p>
+            <h2 class="section-title">Servicios</h2>
+            <p class="section-subtitle">Soluciones a medida para cada etapa de tu idea.</p>
+        </div>
+        <div class="services-grid">
+
+            <!-- Servicio 01 — Análisis Estructural -->
+            <div class="service-card">
+            <span class="service-icon">🏗️</span>
+            <h3>Análisis Estructural</h3>
+            <p>Modelado y cálculo de estructuras con Python, ETABS, SAP2000 y FEM, optimizando la precisión y eficiencia en el diseño.</p>
+            <!-- <p class="service-price">Desde $1,200 USD</p> -->
+            </div>
+
+            <!-- Servicio 02 — Automatización de Cálculos -->
+            <div class="service-card">
+            <span class="service-icon">🤖</span>
+            <h3>Automatización de Cálculos</h3>
+            <p>Desarrollo de scripts y motores de cálculo para armaduras y análisis de elementos finitos, reduciendo tiempos y errores en proyectos estructurales.</p>
+            <!-- <p class="service-price">Desde $1,000 USD</p> -->
+            </div>
+
+            <!-- Servicio 03 — Modelado BIM -->
+            <div class="service-card">
+            <span class="service-icon">📐</span>
+            <h3>Modelado BIM</h3>
+            <p>Creación de modelos inteligentes en Revit, coordinación multidisciplinaria y generación de documentación técnica precisa para proyectos constructivos asi como integracion con Delphin Express.</p>
+            <!-- <p class="service-price">Desde $900 USD</p> -->
+            </div>
+
+            <!-- Servicio 04 — Optimización Estructural -->
+            <div class="service-card">
+            <span class="service-icon">⚡</span>
+            <h3>Optimización Estructural</h3>
+            <p>Análisis y mejora de diseños estructurales mediante programación y técnicas FEM para lograr estructuras más eficientes y sostenibles.</p>
+            <!-- <p class="service-price">Desde $1,300 USD</p> -->
+            </div>
+
+            <!-- Servicio 05 — Consultoría Técnica -->
+            <!-- <div class="service-card">
+            <span class="service-icon">🛠️</span>
+            <h3>Consultoría Técnica</h3>
+            <p>Asesoría en diseño estructural, revisión de proyectos, integración de herramientas BIM y automatización de procesos constructivos.</p>
+            <p class="service-price">$150 USD / hora</p>
+            </div> -->
+
+            <!-- Servicio 06 — Desarrollo de Herramientas -->
+            <div class="service-card">
+            <span class="service-icon">💻</span>
+            <h3>Desarrollo de Herramientas</h3>
+            <p>Creación de software y macros personalizadas en Python, VBA o C++ para mejorar flujos de trabajo en ingeniería y construcción.</p>
+            <!-- <p class="service-price">Desde $1,500 USD</p> -->
+            </div>
+        </div>
+        </section>
+    <!-- FIN Sección Servicios -->
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN PROYECTOS
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN PROYECTOS — Duplica .project-card para más proyectos
+         ───────────────────────────────────────────────────── -->
+    <section id="proyectos">
+      <div class="section-header">
+        <p class="section-label">Mi trabajo</p>
+        <h2 class="section-title">Proyectos</h2>
+        <p class="section-subtitle">Una selección de los proyectos que más me enorgullecen.</p>
+      </div>
+
+      <!-- Índice rápido de proyectos -->
+      <nav class="project-index" aria-label="Índice de proyectos">
+        <a class="index-link" href="#proyecto-01">milcapy</a>
+        <a class="index-link" href="#proyecto-02">milcatrusspy</a>
+        <!-- <a class="index-link" href="#proyecto-03">Dashboard</a>
+        <a class="index-link" href="#proyecto-04">App Hábitos</a>
+        <a class="index-link" href="#proyecto-05">Paletas IA</a> -->
+      </nav>
+
+      <div class="projects-grid">
+
+        <!-- ─────────────────────────────────────────────────
+             PROYECTO 01 — Tarjeta destacada (full width)
+             Cambia: emoji, número, título, descripción, tags, links
+             ───────────────────────────────────────────────── -->
+        <article class="project-card featured" id="proyecto-01">
+        <div class="project-thumb-placeholder">
+            <a href="https://amachacca.github.io/milcapy/" target="_blank">
+                <img src="https://raw.githubusercontent.com/amachacca/milcapy/refs/heads/main/docs/assets/logo.png" alt="Miniatura del proyecto" />
+            </a>
+        </div>
+        <div class="project-body">
+            <span class="project-num">Proyecto 01 · Destacado</span>
+            <h3 class="project-title">milcapy</h3>
+            <p class="project-desc">Biblioteca Python para el análisis estructural de marcos 2D, soportando elementos CST, Q4, Q6, Q6i y Q8. Implementa el método de rigidez directa y FEM para membranas, marcos y armaduras, con funcionalidades avanzadas de análisis matricial de estructuras. Permite definir materiales, secciones (rectangulares, circulares, genéricas), nodos, elementos, cargas y condiciones de frontera, además de generar resultados detallados y visualización interactiva del modelo.</p>
+            <p class="project-info">
+                Desarrollado por
+                <a href="https://github.com/amachacca" target="_blank">Amilcar Machacca Mayo ·</a> ·
+                Publicado en PyPI
+            </p>
+            <div class="project-footer">
+                <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Git</span>
+                <span class="tag">Jupiter Notebook</span>
+                </div>
+                <div class="project-links">
+                <a class="project-link" href="https://github.com/amachacca/milcapy" target="_blank" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <!-- Enlace a PyPI -->
+                <a class="project-link" href="https://pypi.org/project/milcapy/" target="_blank" title="PyPI">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M31.896 18.104v5.219l-4.495 1.636-0.104 0.072 0.067 0.052 4.6-1.676 0.036-0.047v-5.329l-0.073-0.047zM31.495 7.489l-4.052 1.48v5.213l4.453-1.62v-5.219zM31.896 17.943v-5.219l-4.448 1.62v5.219zM27.292 19.615v-5.213l-4.396 1.599v5.219zM22.713 26.661v-5.213l-4.416 1.604v5.219zM22.896 21.412v5.156l4.416-1.609v-5.156l-4.416 1.604zM25.683 23.917c-0.489 0.181-0.88-0.1-0.88-0.615 0-0.521 0.391-1.089 0.88-1.267 0.489-0.176 0.885 0.104 0.885 0.62 0 0.521-0.396 1.089-0.885 1.261zM17.636 12.421l0.484-0.176-4.38-1.6-4.433 1.615 0.141 0.052 4.245 1.548zM27.344 14.219v-5.219l-4.448 1.62v5.219zM22.745 15.891v-5.219l-4.401 1.604v5.213zM18.193 12.328l-4.448 1.62v5.219l4.448-1.62zM9.208 17.552l4.432 1.615v-5.219l-4.432-1.609zM13.787 10.495l4.375 1.593v-5.156l-4.375-1.593zM27.344 3.62l-4.423 1.609v5.219l4.423-1.609zM22.599 5.203l-4.301-1.563-4.36 1.589 4.303 1.563zM20.484 6.14l-2.161 0.792v5.156l4.423-1.609v-5.156zM19.964 9.844c-0.491 0.183-0.881-0.099-0.881-0.615 0-0.521 0.391-1.089 0.881-1.265 0.489-0.177 0.885 0.099 0.885 0.62 0 0.52-0.396 1.083-0.885 1.26zM13.64 24.547v-5.219l-4.432-1.615v5.219zM18.24 22.912v-5.219l-4.495 1.635v5.219zM18.344 22.869l4.396-1.599v-5.219l-4.396 1.599zM18.24 28.292l-4.495 1.635v-5.219h-0.105v5.219l-4.432-1.615v-5.219l-0.068-0.072-0.036-0.084-4.448-1.615v-5.26l0.047 0.016 4.38 1.593 0.021-0.104-4.349-1.584 4.349-1.577v-0.147l-4.344-1.583 4.344-1.584v1.167l0.104-0.072v-3.161l4.344 1.577 0.079-0.077-4.183-1.527-0.141-0.047 4.324-1.573v-0.115l-4.491 1.636v0.025l-0.036 0.027v2.025l-4.516 1.647v0.025l-0.036 0.027v5.344l-4.521 1.64v0.027l-0.031 0.025v5.323l0.031 0.052 4.537 1.652 0.011-0.011 0.009 0.016 4.532 1.651 0.011-0.011 0.009 0.016 4.532 1.645 0.021-0.011 0.015 0.011 4.599-1.672 0.037-0.052zM4.656 12.749l4.344 1.579-4.344 1.584zM4.531 26.615l-4.427-1.609v-5.219l4.427 1.609zM4.552 21.292l-4.349-1.579 4.349-1.583v3.167zM9.083 28.265l-4.427-1.609v-5.219l4.427 1.615zM31.719 7.245l-4.276-1.557v3.115zM27.183 3.527l-4.319-1.573-4.359 1.583 4.328 1.579z"/>
+                    </svg>
+                </a>
+                <a class="project-link" href="https://pypi.org/project/milcapy/" target="_blank" title="Demo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+
+                </div>
+        </div>
+        </div>
+        </article>
+
+        <!-- PROYECTO 02 -->
+        <article class="project-card" id="proyecto-02">
+        <div class="project-thumb-placeholder">
+            <a href="https://github.com/amachacca/milcatrusspy" target="_blank">
+                <img src="https://raw.githubusercontent.com/amachacca/milcatrusspy/refs/heads/main/img/ico.png" alt="Miniatura del proyecto" />
+            </a>
+        </div>
+          <div class="project-body">
+            <span class="project-num">Proyecto 02</span>
+            <h3 class="project-title">Milcatrusspy</h3>
+            <p class="project-desc">
+            Biblioteca Python para análisis estructural 2D y 3D. Permite crear nodos, elementos articulados (armaduras), aplicar cargas y restricciones, resolver la estructura y graficar resultados y deformaciones.
+            </p>
+            <p class="project-info">
+                Desarrollado por
+                <a href="https://github.com/amachacca" target="_blank">Amilcar Machacca Mayo ·</a> ·
+                Publicado en PyPI
+            </p>
+            <div class="project-footer">
+              <div class="project-tags"><span class="tag">Python</span><span class="tag">Git</span><span class="tag">Jupiter Notebook</span></div>
+              <div class="project-links">
+                <a class="project-link" href="https://github.com/amachacca/milcatrusspy" target="_blank" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+                <!-- Enlace a PyPI -->
+                <a class="project-link" href="https://pypi.org/project/milcatrusspy/" target="_blank" title="PyPI">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M31.896 18.104v5.219l-4.495 1.636-0.104 0.072 0.067 0.052 4.6-1.676 0.036-0.047v-5.329l-0.073-0.047zM31.495 7.489l-4.052 1.48v5.213l4.453-1.62v-5.219zM31.896 17.943v-5.219l-4.448 1.62v5.219zM27.292 19.615v-5.213l-4.396 1.599v5.219zM22.713 26.661v-5.213l-4.416 1.604v5.219zM22.896 21.412v5.156l4.416-1.609v-5.156l-4.416 1.604zM25.683 23.917c-0.489 0.181-0.88-0.1-0.88-0.615 0-0.521 0.391-1.089 0.88-1.267 0.489-0.176 0.885 0.104 0.885 0.62 0 0.521-0.396 1.089-0.885 1.261zM17.636 12.421l0.484-0.176-4.38-1.6-4.433 1.615 0.141 0.052 4.245 1.548zM27.344 14.219v-5.219l-4.448 1.62v5.219zM22.745 15.891v-5.219l-4.401 1.604v5.213zM18.193 12.328l-4.448 1.62v5.219l4.448-1.62zM9.208 17.552l4.432 1.615v-5.219l-4.432-1.609zM13.787 10.495l4.375 1.593v-5.156l-4.375-1.593zM27.344 3.62l-4.423 1.609v5.219l4.423-1.609zM22.599 5.203l-4.301-1.563-4.36 1.589 4.303 1.563zM20.484 6.14l-2.161 0.792v5.156l4.423-1.609v-5.156zM19.964 9.844c-0.491 0.183-0.881-0.099-0.881-0.615 0-0.521 0.391-1.089 0.881-1.265 0.489-0.177 0.885 0.099 0.885 0.62 0 0.52-0.396 1.083-0.885 1.26zM13.64 24.547v-5.219l-4.432-1.615v5.219zM18.24 22.912v-5.219l-4.495 1.635v5.219zM18.344 22.869l4.396-1.599v-5.219l-4.396 1.599zM18.24 28.292l-4.495 1.635v-5.219h-0.105v5.219l-4.432-1.615v-5.219l-0.068-0.072-0.036-0.084-4.448-1.615v-5.26l0.047 0.016 4.38 1.593 0.021-0.104-4.349-1.584 4.349-1.577v-0.147l-4.344-1.583 4.344-1.584v1.167l0.104-0.072v-3.161l4.344 1.577 0.079-0.077-4.183-1.527-0.141-0.047 4.324-1.573v-0.115l-4.491 1.636v0.025l-0.036 0.027v2.025l-4.516 1.647v0.025l-0.036 0.027v5.344l-4.521 1.64v0.027l-0.031 0.025v5.323l0.031 0.052 4.537 1.652 0.011-0.011 0.009 0.016 4.532 1.651 0.011-0.011 0.009 0.016 4.532 1.645 0.021-0.011 0.015 0.011 4.599-1.672 0.037-0.052zM4.656 12.749l4.344 1.579-4.344 1.584zM4.531 26.615l-4.427-1.609v-5.219l4.427 1.609zM4.552 21.292l-4.349-1.579 4.349-1.583v3.167zM9.083 28.265l-4.427-1.609v-5.219l4.427 1.615zM31.719 7.245l-4.276-1.557v3.115zM27.183 3.527l-4.319-1.573-4.359 1.583 4.328 1.579z"/>
+                    </svg>
+                </a>
+                <!-- <a class="project-link" href="#" target="_blank" title="Demo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROYECTO 03 -->
+        <article class="project-card" id="proyecto-04">
+        <div class="project-thumb-placeholder">🏗️</div>
+        <div class="project-body">
+            <span class="project-num">Proyecto 04 (En Desarrollo)</span>
+            <h3 class="project-title">Análisis Estructural Avanzado</h3>
+            <p class="project-desc">
+            Herramienta para análisis estático y dinámico de estructuras usando elementos exactos: marco, truss y armaduras y elementos finitos: memebranas, placas y cascaras. con soporte para análisis matricial, no lineal, geométrico y de material, con nodos de 1 a 6 grados de libertad, en 1D, 2D y 3D.
+            </p>
+            <div class="project-footer">
+            <div class="project-tags">
+                <span class="tag">Python</span><span class="tag">C++</span><span class="tag">C#</span><span class="tag">Rust</span>
+            </div>
+            <!-- <div class="project-links">
+                <a class="project-link" href="#" target="_blank" title="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+                <a class="project-link" href="#" target="_blank" title="Demo">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </a>
+            </div> -->
+
+            </div>
+        </div>
+        </article>
+
+        <!-- ─────────────────────────────────────────────────────
+             AÑADIR PROYECTOS: Copia un bloque <article class="project-card">
+             y cambia el id (proyecto-06...), número, título, descripción, tags y links
+             ───────────────────────────────────────────────────── -->
+
+      </div>
+    </section>
+    <!-- FIN Sección Proyectos -->
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN BLOG
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN BLOG — Duplica .blog-card para más artículos
+         ───────────────────────────────────────────────────── -->
+    <section id="blog">
+      <div class="section-header">
+        <p class="section-label">Ideas & aprendizajes</p>
+        <h2 class="section-title">Blog</h2>
+        <p class="section-subtitle">Comparto lo que aprendo sobre desarrollo, diseño y producto.</p>
+        <p class="section-subtitle"><strong>Próximamente habrá publicaciones de artículos, ¡mantente atento!</strong></p>
+      </div>
+      <div class="blog-grid">
+
+        <!-- Artículo 01 — Cambia categoría, fecha, título, extracto y link -->
+        <!-- <article class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-category">React</span>
+            <span>15 Feb 2025</span>
+            <span>·</span>
+            <span>5 min lectura</span>
+          </div>
+          <h3>Cómo estructurar un proyecto Next.js a escala sin volverte loco</h3>
+          <p>Convenciones de carpetas, module aliasing, feature flags y más herramientas que uso en proyectos grandes de Next.js.</p>
+          <a class="blog-read" href="#" target="_blank">Leer artículo →</a>
+        </article> -->
+
+        <!-- Artículo 02 -->
+        <!-- <article class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-category">IA</span>
+            <span>02 Ene 2025</span>
+            <span>·</span>
+            <span>8 min lectura</span>
+          </div>
+          <h3>Integrar LLMs en aplicaciones web sin que cueste una fortuna</h3>
+          <p>Estrategias de caching, prompts reutilizables y arquitecturas que reducen el costo de tus llamadas a la API de OpenAI.</p>
+          <a class="blog-read" href="#" target="_blank">Leer artículo →</a>
+        </article> -->
+
+        <!-- Artículo 03 -->
+        <!-- <article class="blog-card">
+          <div class="blog-meta">
+            <span class="blog-category">DevOps</span>
+            <span>10 Nov 2024</span>
+            <span>·</span>
+            <span>6 min lectura</span>
+          </div>
+          <h3>Docker Compose para desarrollo local: mi setup definitivo en 2025</h3>
+          <p>Desde containers efímeros hasta live reloading con volumes, todo lo que necesitas para tener un entorno de dev robusto.</p>
+          <a class="blog-read" href="#" target="_blank">Leer artículo →</a>
+        </article> -->
+
+      </div>
+    </section>
+    <!-- FIN Sección Blog -->
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN RECURSOS
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN RECURSOS — Duplica .resource-item para más recursos
+         ───────────────────────────────────────────────────── -->
+    <section id="recursos">
+        <div class="section-header">
+            <p class="section-label">Herramientas & links útiles</p>
+            <h2 class="section-title">Recursos</h2>
+            <p class="section-subtitle">Todo lo que uso y recomiendo en mi día a día como desarrollador.</p>
+        </div>
+        <div class="resources-grid">
+
+        <!-- Recurso 01 — Simulación y análisis de estructuras simples -->
+        <a class="resource-item" href="https://github.com/amachacca/Concreto-Armado-I" target="_blank">
+        <div class="resource-emoji">🧱</div>
+        <div class="resource-info">
+            <h4>Concreto Armado I</h4>
+            <p>Repositorio con notebooks y scripts para diseño y análisis de vigas de concreto armado, incluyendo rebarplot y modelviga.</p>
+            <p class="resource-type">Repo · GitHub</p>
+        </div>
+        </a>
+
+        <!-- Recurso 02 — Análisis sísmico -->
+        <a class="resource-item" href="https://github.com/amachacca/Analisis-simico" target="_blank">
+        <div class="resource-emoji">🌐</div>
+        <div class="resource-info">
+            <h4>Análisis Sísmico</h4>
+            <p>Scripts y notebooks para análisis de sismos y respuesta estructural, incluyendo AME.ipynb y analisis-tiempo-historia.ipynb.</p>
+            <p class="resource-type">Repo · GitHub</p>
+        </div>
+        </a>
+
+        <!-- Recurso 03 — Plantillas y notebooks de aprendizaje -->
+        <a class="resource-item" href="https://github.com/amachacca/str_codes" target="_blank">
+        <div class="resource-emoji">📊</div>
+        <div class="resource-info">
+            <h4>Plantillas y Notebooks</h4>
+            <p>Varios notebooks para simulaciones de estructuras, análisis matricial y espectros de vibración, como 1.0_M_SIMPSON.ipynb y GUI_VIGA.PY.</p>
+            <p class="resource-type">Repo · GitHub</p>
+        </div>
+        </a>
+
+
+      </div>
+    </section>
+    <!-- FIN Sección Recursos -->
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECCIÓN CONTACTO
+         ══════════════════════════════════════════════════════ -->
+
+    <!-- ─────────────────────────────────────────────────────
+         SECCIÓN CONTACTO — Edita datos e info del formulario
+         ───────────────────────────────────────────────────── -->
+    <section id="contacto">
+      <div class="section-header">
+        <p class="section-label">Hablemos</p>
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">¿Tienes un proyecto en mente o quieres simplemente saludar? Escríbeme.</p>
+      </div>
+      <div class="contact-grid">
+
+        <!-- Información de contacto -->
+        <div class="contact-info">
+
+            <!-- Email — cambia el href y texto -->
+            <a class="contact-card" href="mailto:200190@unsaac.edu.pe" style="text-decoration:none; color:inherit;">
+                <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-card-text">
+                <p>Email</p>
+                <p>200190@unsaac.edu.pe</p>
+                </div>
+            </a>
+
+            <!-- LinkedIn — cambia el href -->
+            <a class="contact-card" href="https://linkedin.com/in/amachacca" target="_blank" style="text-decoration:none; color:inherit;">
+                <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </div>
+                <div class="contact-card-text">
+                <p>LinkedIn</p>
+                <p>linkedin.com/in/amachacca</p>
+                </div>
+            </a>
+
+            <!-- WhatsApp — cambia el href -->
+            <a class="contact-card" href="https://wa.me/51926493401" target="_blank" style="text-decoration:none; color:inherit;">
+            <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.52 3.48A11.918 11.918 0 0012 .03C5.373.03.03 5.373.03 12c0 2.12.553 4.094 1.607 5.837L.03 24l6.352-1.603A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12 0-3.193-1.243-6.197-3.48-8.52zM12 21.75c-2.04 0-3.954-.553-5.604-1.51l-.403-.24-3.768.95.95-3.768-.24-.403A9.743 9.743 0 012.25 12c0-5.376 4.374-9.75 9.75-9.75s9.75 4.374 9.75 9.75-4.374 9.75-9.75 9.75zm5.373-7.547c-.29-.145-1.713-.844-1.978-.939-.265-.094-.458-.145-.65.145-.19.29-.733.939-.897 1.132-.165.19-.33.21-.62.07-.29-.145-1.224-.452-2.332-1.437-.863-.768-1.444-1.715-1.61-2.005-.165-.29-.018-.447.127-.592.13-.129.29-.33.435-.495.145-.165.193-.29.29-.483.097-.192.048-.36-.024-.505-.072-.145-.65-1.566-.892-2.147-.235-.562-.474-.487-.65-.497l-.554-.01c-.19 0-.5.07-.763.33s-1 1.03-1 2.515c0 1.484 1.025 2.918 1.167 3.115.145.192 2.018 3.08 4.892 4.32.684.295 1.216.47 1.63.6.684.21 1.31.18 1.803.11.55-.08 1.713-.7 1.956-1.38.243-.682.243-1.267.17-1.38-.072-.116-.264-.192-.554-.337z"/>
+                </svg>
+            </div>
+            <div class="contact-card-text">
+                <p>WhatsApp</p>
+                <p>+51 926 493 401</p>
+            </div>
+            </a>
+
+            <!-- Facebook -->
+            <a class="contact-card" href="https://www.facebook.com/amachacca" target="_blank" style="text-decoration:none; color:inherit;">
+            <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.495v-9.294H9.691V11.07h3.129V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.636h-3.12V24h6.116C23.407 24 24 23.407 24 22.675V1.325C24 .593 23.407 0 22.675 0z"/>
+                </svg>
+            </div>
+            <div class="contact-card-text">
+                <p>Facebook</p>
+                <p>amachacca</p>
+            </div>
+            </a>
+
+            <!-- TikTok -->
+            <a class="contact-card" href="https://www.tiktok.com/@amachacca" target="_blank" style="text-decoration:none; color:inherit;">
+            <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor">
+                <path d="M544.5 273.9C500.5 274 457.5 260.3 421.7 234.7L421.7 413.4C421.7 446.5 411.6 478.8 392.7 506C373.8 533.2 347.1 554 316.1 565.6C285.1 577.2 251.3 579.1 219.2 570.9C187.1 562.7 158.3 545 136.5 520.1C114.7 495.2 101.2 464.1 97.5 431.2C93.8 398.3 100.4 365.1 116.1 336C131.8 306.9 156.1 283.3 185.7 268.3C215.3 253.3 248.6 247.8 281.4 252.3L281.4 342.2C266.4 337.5 250.3 337.6 235.4 342.6C220.5 347.6 207.5 357.2 198.4 369.9C189.3 382.6 184.4 398 184.5 413.8C184.6 429.6 189.7 444.8 199 457.5C208.3 470.2 221.4 479.6 236.4 484.4C251.4 489.2 267.5 489.2 282.4 484.3C297.3 479.4 310.4 469.9 319.6 457.2C328.8 444.5 333.8 429.1 333.8 413.4L333.8 64L421.8 64C421.7 71.4 422.4 78.9 423.7 86.2C426.8 102.5 433.1 118.1 442.4 131.9C451.7 145.7 463.7 157.5 477.6 166.5C497.5 179.6 520.8 186.6 544.6 186.6L544.6 274z"/>
+                </svg>
+            </div>
+            <div class="contact-card-text">
+                <p>TikTok</p>
+                <p>@amachacca</p>
+            </div>
+            </a>
+
+            <!-- Disponibilidad — cambia el estado según tu situación -->
+            <div class="contact-card">
+                <div class="contact-card-icon" style="background: rgba(127,255,110,0.15);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="contact-card-text">
+                <p>Disponibilidad</p>
+                <p style="color: var(--accent);">✓ Disponible para proyectos</p>
+                </div>
+            </div>
+
+            <!-- Tiempo de respuesta -->
+            <div class="contact-card">
+                <div class="contact-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div class="contact-card-text">
+                <p>Respondo en</p>
+                <p>Menos de 24 horas</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Formulario de contacto -->
+        <!-- NOTA: Para que funcione, conecta un servicio como Formspree, Netlify Forms o tu backend -->
+        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label for="contact-name">Nombre</label>
+            <input type="text" id="contact-name" placeholder="Tu nombre completo" required/>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" placeholder="tu@email.com" required/>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Asunto</label>
+            <input type="text" id="contact-subject" placeholder="¿De qué se trata?"/>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Mensaje</label>
+            <textarea id="contact-message" placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="formSubmitBtn">Enviar mensaje</button>
+        </form>
+
+      </div>
+    </section>
+    <!-- FIN Sección Contacto -->
+
+
+    <!-- Footer -->
+    <!-- ─────────────────────────────────────────────────────
+         FOOTER — Cambia el nombre y el año
+         ───────────────────────────────────────────────────── -->
+    <footer class="footer" style="background: var(--bg-card); color: var(--text); padding: 3rem 2rem; display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between;">
+    
+    <!-- Columna 1: Derechos -->
+    <div class="footer-col">
+        <h4>Derechos</h4>
+        <p style="display:flex; align-items:center; gap:0.5rem; margin:0.5rem 0;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" stroke="currentColor">
+            <path d="M14 15.6672C13.475 15.8812 12.8952 16 12.2857 16C9.91878 16 8 14.2091 8 12C8 9.79086 9.91878 8 12.2857 8C12.8952 8 13.475 8.11876 14 8.33283" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        2025 Amilcar Machacca Mayo. Todos los derechos reservados.
+        </p>
+    </div>
+
+    <!-- Columna 2: Portafolio -->
+    <div class="footer-col">
+        <h4>Portafolio Personal</h4>
+        <ul style="list-style:none; padding:0; margin:0.5rem 0;">
+        <li><a href="#inicio" style="color: var(--accent); text-decoration:none;">Inicio</a></li>
+        <li><a href="#sobre-mi" style="color: var(--accent); text-decoration:none;">Sobre mí</a></li>
+        <li><a href="#servicios" style="color: var(--accent); text-decoration:none;">Servicios</a></li>
+        <li><a href="#proyectos" style="color: var(--accent); text-decoration:none;">Proyectos</a></li>
+        <li><a href="#blog" style="color: var(--accent); text-decoration:none;">Blog</a></li>
+        <li><a href="#recursos" style="color: var(--accent); text-decoration:none;">Recursos</a></li>
+        <li><a href="#contacto" style="color: var(--accent); text-decoration:none;">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Columna 3: Contactos -->
+    <div class="footer-col">
+        <h4>Contactos</h4>
+        <p>Teléfono: <a href="https://wa.me/926493401" style="color: var(--accent); text-decoration:none;">+51 926 493 401</a></p>
+        <p>Sígueme:</p>
+        <p><a href="https://facebook.com/amachacca" style="color: var(--accent); text-decoration:none;">Facebook</a></p>
+        <p><a href="https://linkedin.com/in/amachacca" style="color: var(--accent); text-decoration:none;">LinkedIn</a></p>
+        <p><a href="https://tiktok.com/@amachacca" style="color: var(--accent); text-decoration:none;">Tiktok</a></p>
+        <p><a href="https://github.com/amachacca" style="color: var(--accent); text-decoration:none;">Github</a></p>
+    </div>
+
+    </footer>
+  </main>
+  <!-- FIN Panel Principal -->
+
+</div>
+<!-- FIN Layout -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+    JAVASCRIPT — Lógica interactiva
+    ══════════════════════════════════════════════════════════ -->
+<script src="script.js"></script>
+</body>
+</html>
