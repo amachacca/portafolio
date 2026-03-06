@@ -174,3 +174,50 @@ setTimeout(() => {
     e.target.reset();
 }, 3000);
 }
+
+
+
+
+/* ──────────────────────────────────────────────────
+    REEMPLAZA EL MANEJADOR DE FORMULARIO CON EMAILJS
+    Asegúrate de configurar tu servicio, plantilla y clave pública en EmailJS
+    ────────────────────────────────────────────────── */
+
+// // iniciar EmailJS
+// (function(){
+//   emailjs.init("wu0L31nsaUbkoCzlV");
+// })();
+
+const form = document.getElementById("contact-form");
+const btn = document.getElementById("formSubmitBtn");
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    btn.textContent = "Enviando...";
+
+    const serviceID = "default_service";
+    const templateID = "template_w3orscm";
+
+    emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+
+    btn.textContent = "Enviar mensaje";
+
+    alert("Mensaje enviado correctamente");
+
+    form.reset();
+
+    })
+    .catch((error) => {
+
+        btn.textContent = "Enviar mensaje";
+
+        alert("Error al enviar mensaje");
+
+        console.log(error);
+
+    });
+
+});
